@@ -19,22 +19,22 @@ Kørsel
 Det nemmeste er pt. at køre toolet inde fra sin IDE:
     - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer.
 
-    I src/test/resources findes tre sæt konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
+I src/test/resources findes tre sæt konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
 
 
 For at ændre de endpoints/soapactions der benyttes skal man rette i properties filen, og for at rette i payload retter man i XML filen.
 Resten klarer WSClient - (husk dog selv at whiteliste de CVR der benyttes)
-    - Default CVR er angivet i src/main/resources/config.properties i nøglen 'sdsd.org.using.id.value'. Ønsker man at ændre CVR nummeret kan det gøres via -Dsdsd.org.using.id.value=25520041 f.eks. - eller en af de andre metoder beskrevet under Konfiguration.
+    - Default CVR er angivet i src/main/resources/config.properties i nøglen 'sdsd.org.using.id.value'. Ønsker man at ændre CVR nummeret kan det gøres via ```-Dsdsd.org.using.id.value=25520041``` f.eks. - eller en af de andre metoder beskrevet under Konfiguration.
 
 Eksempler
 =========
 For at hente vaccinationskort fra DDV specificeres disse VM options til com.trifork.dgws.testclient.WSClient:
-   -Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml
+   ```-Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml```
 
 For at hente metadata fra Bemyndigelse:
-   -Dxmlfile=hentMetadataRequest.xml -Dconfig=hentmetadata.properties
+   ```-Dxmlfile=hentMetadataRequest.xml -Dconfig=hentmetadata.properties```
 
 For at indlæse metadata til Bemyndigelse:
-   -Dxmlfile=indlaesmetadata.xml -Dconfig=indlaesmetadata.properties
+   ```-Dxmlfile=indlaesmetadata.xml -Dconfig=indlaesmetadata.properties```
 
 
