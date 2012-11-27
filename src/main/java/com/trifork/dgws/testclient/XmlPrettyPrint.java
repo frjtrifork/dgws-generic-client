@@ -15,7 +15,7 @@ public class XmlPrettyPrint {
         }
         Node document;
         boolean keepDeclaration;
-System.out.println("XML:\n" + xml);
+
         document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xml.getBytes("UTF-8"))).getDocumentElement();
         keepDeclaration = xml.startsWith("<?xml");
 
