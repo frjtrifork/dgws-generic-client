@@ -10,10 +10,13 @@ import java.io.ByteArrayInputStream;
 
 public class XmlPrettyPrint {
     public static String formatXml(String xml) throws Exception {
+        if (xml == null || "".equals(xml.trim())) {
+            return "";
+        }
         Node document;
         boolean keepDeclaration;
-
-        document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xml.getBytes())).getDocumentElement();
+System.out.println("XML:\n" + xml);
+        document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new ByteArrayInputStream(xml.getBytes("UTF-8"))).getDocumentElement();
         keepDeclaration = xml.startsWith("<?xml");
 
         DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
