@@ -17,18 +17,20 @@ WSClient indlæser konfiguration fra flere kilder:
 Kørsel
 ======
 Klienten kan køres fra kommandolinjen vha Maven:
+
     mvn exec:java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml
 
 Man kan bygge en jar som man kan tage med sig hvor der ikke nødvendigvis er maven:
     Kør mvn package på udviklermaskine
     tag dgws-testclient/target/dgws-testclient-1.0-SNAPSHOT.one-jar.jar
 
-    Kør den :
+    Kør java -jar med de rette systemproperties:
+
     java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml -jar dgws-testclient-1.0-SNAPSHOT.one-jar.jar
 
 
 Alternativt kan man køre toolet inde fra sin IDE:
-    - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile parametre.
+    - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile systemproperties.
 
 Eksempler
 =========
