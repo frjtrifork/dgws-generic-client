@@ -16,7 +16,6 @@ public class WSClient {
     private static final Logger logger = Logger.getLogger(WSClient.class);
 
     private static final String PROPERTY_XML_BODY_FILE = "xmlfile";
-    private static final String PROPERTY_SOAPACTION = "soapaction";
 
     public static void main(String[] args) throws Exception {
         String path = null, soapAction = null;
@@ -25,10 +24,7 @@ public class WSClient {
 
         if (args.length != 0) {
             String name = WSClient.class.getName();
-            System.out.println("Usage: " + name + " -D" + PROPERTY_XML_BODY_FILE + "=<path_to_xml_file_to_use_as_body> [-D" + PROPERTY_SOAPACTION + "=<soapAction>]\n");
-            System.out.println("\t" + name + " -D" + PROPERTY_XML_BODY_FILE + "=getVaccinationCardRequest.xml");
-            System.out.println("\tor");
-            System.out.println("\t" + name + " -D" + PROPERTY_XML_BODY_FILE + "=getVaccinationCardRequest.xml -D" + PROPERTY_SOAPACTION + "=\"http://vaccinationsregister.dk/schemas/2010/07/01#GetVaccinationCard\"");
+            System.out.println("Usage: " + name + "-Dconfig=myconfig.properties -D" + PROPERTY_XML_BODY_FILE + "=<path_to_xml_file_to_use_as_body>\n");
             System.exit(0);
         }
 
@@ -57,6 +53,7 @@ public class WSClient {
 
     public String callWebService(File xmlBody) throws Exception {
         DGWSRequestHelper requestHelper = applicationContext.getBean(DGWSRequestHelper.class);
+
         logger.info(XmlPrettyPrint.formatXml(requestHelper.getSoapEnvelope(getPayload(xmlBody))));
 
         return requestHelper.makeRequest(getPayload(xmlBody));
