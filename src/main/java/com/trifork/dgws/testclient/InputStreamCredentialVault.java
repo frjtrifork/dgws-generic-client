@@ -20,7 +20,6 @@ public class InputStreamCredentialVault extends ArchivableCredentialVault {
         try {
             if (keystoreIs != null) {
                 keyStore.load(keystoreIs, keyStorePassword.toCharArray());
-                System.out.println("============>>> keystore loaded from inputstream");
                 keystoreIs.close();
             } else {
                 keyStore.load(null, keyStorePassword.toCharArray());
