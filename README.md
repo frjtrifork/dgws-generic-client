@@ -16,18 +16,29 @@ WSClient indlæser konfiguration fra flere kilder:
 
 Kørsel
 ======
-Det nemmeste er pt. at køre toolet inde fra sin IDE:
-    - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer.
+Klienten kan køres fra kommandolinjen vha Maven:
+    mvn exec:java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml
 
-I src/test/resources findes tre sæt konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
+Man kan bygge en jar som man kan tage med sig hvor der ikke nødvendigvis er maven:
+    Kør mvn package på udviklermaskine
+    tag dgws-testclient/target/dgws-testclient-1.0-SNAPSHOT.one-jar.jar
+
+    Kør den :
+    java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml -jar dgws-testclient-1.0-SNAPSHOT.one-jar.jar
 
 
-For at ændre de endpoints/soapactions der benyttes skal man rette i properties filen, og for at rette i payload retter man i XML filen.
-Resten klarer WSClient - (husk dog selv at whiteliste de CVR der benyttes)
-    - Default CVR er angivet i src/main/resources/config.properties i nøglen 'sdsd.org.using.id.value'. Ønsker man at ændre CVR nummeret kan det gøres via ```-Dsdsd.org.using.id.value=25520041``` f.eks. - eller en af de andre metoder beskrevet under Konfiguration.
+Alternativt kan man køre toolet inde fra sin IDE:
+    - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile parametre.
 
 Eksempler
 =========
+I src/test/resources findes der konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
+
+For at ændre de endpoints/soapactions der benyttes skal man rette i properties filen.
+
+Resten håndteres af WSClient - (husk selv at whiteliste de CVR der benyttes hvis servicen kræver det - dette er servicespecifikt og kan ikke håndteres af WSClient)
+    - Default CVR er angivet i src/main/resources/config.properties i nøglen 'sdsd.org.using.id.value'. Ønsker man at ændre CVR nummeret kan det gøres via ```-Dsdsd.org.using.id.value=25520041``` f.eks. - eller en af de andre metoder beskrevet under Konfiguration.
+
 For at hente vaccinationskort fra DDV specificeres disse VM options til com.trifork.dgws.testclient.WSClient:
    ```-Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml```
 
