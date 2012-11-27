@@ -20,17 +20,22 @@ Klienten kan køres fra kommandolinjen vha Maven:
 
     mvn exec:java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml
 
-Man kan bygge en jar som man kan tage med sig hvor der ikke nødvendigvis er maven:
-    Kør mvn package på udviklermaskine
-    tag dgws-testclient/target/dgws-testclient-1.0-SNAPSHOT.one-jar.jar
+eller benyt profilen der svarer til ovenstående:
 
-    Kør java -jar med de rette systemproperties:
+    mvn -P getVaccinationCard
 
-    java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml -jar dgws-testclient-1.0-SNAPSHOT.one-jar.jar
+Man kan desuden bygge en jar med alle dependencies indbygget - som man kan tage med sig på systemer hvor der ikke nødvendigvis er maven eller github adgang:
+
+Kør ```mvn package``` på udviklermaskine og gem dgws-testclient/target/dgws-testclient-1.0-SNAPSHOT.one-jar.jar til senere brug.
+
+Kør java -jar med de rette systemproperties:
+
+    java -Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml -jar dgws-testclient-1.0-SNAPSHOT.one-jar.jar
 
 
 Alternativt kan man køre toolet inde fra sin IDE:
-    - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile systemproperties.
+
+- Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile systemproperties.
 
 Eksempler
 =========
