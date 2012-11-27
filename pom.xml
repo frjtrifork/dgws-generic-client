@@ -57,13 +57,33 @@
         </resources>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <includeProjectDependencies>true</includeProjectDependencies>
+                    <mainClass>com.trifork.dgws.testclient.WSClient</mainClass>
+                    <systemProperties>
+                        <systemProperty>
+                            <key>config</key>
+                            <value>${config}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <key>xmlfile</key>
+                            <value>${xmlfile}</value>
+                        </systemProperty>
+                    </systemProperties>
+                </configuration>
+            </plugin>
+
+            <plugin>
                 <groupId>com.jolira</groupId>
                 <artifactId>onejar-maven-plugin</artifactId>
                 <version>1.4.4</version>
                 <executions>
                     <execution>
                         <configuration>
-                            <mainClass>com.trifork.dgws.client.WSClient</mainClass>
+                            <mainClass>com.trifork.dgws.testclient.WSClient</mainClass>
                             <attachToBuild>true</attachToBuild>
                         </configuration>
                         <goals>
@@ -74,5 +94,29 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>getVaccinationCard</id>
+            <properties>
+                <config>${basedir}/src/test/resources/getVaccinationCard.properties</config>
+                <xmlfile>${basedir}/src/test/resources/getVaccinationCardRequest.xml</xmlfile>
+            </properties>
+            <build>
+                <defaultGoal>exec:java</defaultGoal>
+            </build>
+        </profile>
+        <profile>
+            <id>hentMetadata</id>
+            <properties>
+                <config>${basedir}/src/test/resources/hentmetadata.properties</config>
+                <xmlfile>${basedir}/src/test/resources/hentMetadataRequest.xml</xmlfile>
+            </properties>
+            <build>
+                <defaultGoal>exec:java</defaultGoal>
+            </build>
+        </profile>
+
+    </profiles>
 
 </project>
