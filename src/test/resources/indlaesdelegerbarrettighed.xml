@@ -1,0 +1,101 @@
+<ns:IndlaesMetadataRequest xmlns:ns="http://nsi.dk/bemyndigelse/2012/05/01/">
+
+    <DelegerbarRettigheder>
+
+        <!-- Læge -->
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+            <Rettighed>VaccinationSe</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligehold</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+            <Rettighed>VaccinationGodkend</Rettighed>
+        </DelegerbarRettighed>
+
+        <!-- Tandlæge -->
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Dentist</Arbejdsfunktion>
+            <Rettighed>VaccinationSe</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Dentist</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligehold</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Dentist</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+        </DelegerbarRettighed>
+
+        <!-- Jordemoder -->
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Midwife</Arbejdsfunktion>
+            <Rettighed>VaccinationSe</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Midwife</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligehold</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Midwife</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+        </DelegerbarRettighed>
+
+        <!-- Sygeplejerske -->
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Nurse</Arbejdsfunktion>
+            <Rettighed>VaccinationSe</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Nurse</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligehold</Rettighed>
+        </DelegerbarRettighed>
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>Nurse</Arbejdsfunktion>
+            <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+        </DelegerbarRettighed>
+
+        <!-- Social- og sundhedsassistent -->
+        <DelegerbarRettighed>
+            <Domaene>Trifork</Domaene>
+            <System>DDV</System>
+            <Arbejdsfunktion>SosuAssist</Arbejdsfunktion>
+            <Rettighed>VaccinationSe</Rettighed>
+        </DelegerbarRettighed>
+
+    </DelegerbarRettigheder>
+
+</ns:IndlaesMetadataRequest>
