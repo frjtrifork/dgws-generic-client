@@ -1,0 +1,62 @@
+<ns:OpretGodkendteBemyndigelserRequest xmlns:ns="http://nsi.dk/bemyndigelse/2012/05/01/">
+    <!-- Bemyndigende: Muhamad Danielsen (Læge) - Bemyndigede: Ramzan Petersen (Læge) -->
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1003244314</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationSe</Rettighed>
+    </Bemyndigelse>
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1003244314</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationVedligehold</Rettighed>
+    </Bemyndigelse>
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1003244314</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+    </Bemyndigelse>
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1003244314</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationGodkend</Rettighed>
+    </Bemyndigelse>
+
+    <!-- Bemyndigende: Muhamad Danielsen (Læge) - Bemyndigede: Eve Danielsen (Sygeplejerske)  -->
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1306022306</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationSe</Rettighed>
+    </Bemyndigelse>
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1306022306</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationVedligehold</Rettighed>
+    </Bemyndigelse>
+    <Bemyndigelse>
+        <BemyndigendeCpr>2006271866</BemyndigendeCpr>
+        <BemyndigedeCpr>1306022306</BemyndigedeCpr>
+        <BemyndigedeCvr>25520041</BemyndigedeCvr>
+        <System>DDV</System>
+        <Arbejdsfunktion>Doctor</Arbejdsfunktion>
+        <Rettighed>VaccinationVedligeholdAnbefalet</Rettighed>
+    </Bemyndigelse>
+
+</ns:OpretGodkendteBemyndigelserRequest>
