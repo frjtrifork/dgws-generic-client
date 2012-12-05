@@ -9,6 +9,20 @@
     <artifactId>dgws-testclient</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>trifork.nexus</id>
+            <url>https://nexus.trifork.com/content/repositories/snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>trifork.public</id>
+            <url>https://nexus.trifork.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>dk.sosi.seal</groupId>
