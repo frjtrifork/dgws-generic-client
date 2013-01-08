@@ -24,11 +24,11 @@ eller benyt profilen der svarer til ovenstående:
 
 Man kan desuden bygge en jar med alle dependencies indbygget - som man kan tage med sig på systemer hvor der ikke nødvendigvis er maven eller github adgang:
 
-Kør ```mvn package``` på udviklermaskine og gem dgws-testclient/target/dgws-testclient-1.0-SNAPSHOT.one-jar.jar til senere brug.
+Kør ```mvn package``` på udviklermaskine og gem dgws-generic-client/target/dgws-generic-client-1.0-SNAPSHOT.one-jar.jar til senere brug.
 
 Kør java -jar med de rette systemproperties:
 
-    java -Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml -jar dgws-testclient-1.0-SNAPSHOT.one-jar.jar
+    java -Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml -jar dgws-generic-client-1.0-SNAPSHOT.one-jar.jar
 
 
 Alternativt kan man køre toolet inde fra sin IDE:
@@ -54,7 +54,7 @@ For at ændre de endpoints/soapactions der benyttes skal man rette i properties 
 Resten håndteres af WSClient - (husk selv at whiteliste de CVR der benyttes hvis servicen kræver det - dette er servicespecifikt og kan ikke håndteres af WSClient)
     - Default CVR er angivet i src/main/resources/config.properties i nøglen 'sdsd.org.using.id.value'. Ønsker man at ændre CVR nummeret kan det gøres via ```-Dsdsd.org.using.id.value=25520041``` f.eks. - eller en af de andre metoder beskrevet under Konfiguration.
 
-For at hente vaccinationskort fra DDV specificeres disse VM options til com.trifork.dgws.testclient.WSClient:
+For at hente vaccinationskort fra DDV specificeres disse VM options til com.trifork.dgws.client.WSClient:
    ```-Dconfig=getVaccinationCard.properties -Dxmlfile=getVaccinationCardRequest.xml```
 
 For at hente metadata fra Bemyndigelse:
