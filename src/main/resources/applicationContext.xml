@@ -7,16 +7,19 @@
 
     <context:component-scan base-package="com.trifork.dgws.testclient"/>
 
-    <bean id="dgwsTemplate" class="com.trifork.dgws.testclient.DGWSRequestHelper" init-method="init">
+    <bean id="dgwsTemplate" class="com.trifork.dgws.testclient.DGWSRequestHelper">
         <property name="serviceEndpoint" value="${serviceurl}"/>
 
+        <property name="whitelistingHeaderEnabled" value="${whitelisting.header}" />
+        
+        <property name="sosi" ref="sosi" />
+    </bean>
+
+    <bean id="sosi" class="com.trifork.dgws.testclient.SOSI" init-method="init">
         <property name="keystore" value="${keystore.path}"/>
         <property name="keystorePassword" value="${keystore.password}"/>
         <property name="keystoreAlias" value="${keystore.alias}" />
-
-        <property name="whitelistingHeaderEnabled" value="${whitelisting.header}" />
     </bean>
-
 
     <context:property-placeholder system-properties-mode="OVERRIDE" ignore-resource-not-found="true"
                                location="classpath:config.properties, file:config.properties, file:${config}" file-encoding="ISO-8859-1"/>
