@@ -1,4 +1,4 @@
-dgws-testclient
+#dgws-testclient
 ===============
 
 Simpel DGWS testklient der kan wrappe en XML payload i en korrekt DGWS Soap Envelope og skyde kaldet afsted mod en DGWS.
@@ -13,6 +13,12 @@ WSClient indlæser konfiguration fra flere kilder:
  - Opret en config.properties i dit 'working dir' og overskriv f.eks. 'serviceurl' nøglen deri
  - Default konfigurationen findes i src/main/resources/config.properties. Undlad at rette i den fil!, benyt en af de ovenstående muligheder i stedet.
  - For at udpege XML payloaden kan man angive -Dxmlfile=payload.xml
+
+Certifikat opsætning
+--------------------
+```keystore.path=``` bestemmer hvor clienten forsørger at hente certifikated fra.
+Som standard forsøger den at hente classpath:validMocesVault.jks som ligger inde i jar filen, dette vil somregel kun være det man ønsker i udvikling eller test
+i produktion kan man sætte den til en fil som sådan: ```keystore.path=file:///filepath/certificat.jks```
 
 Kørsel
 ======
@@ -37,6 +43,17 @@ Alternativt kan man køre toolet inde fra sin IDE:
 
 - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile systemproperties.
 
+I produktion
+------------
+Løb igennem alle parametre og se de står korrekt til produktion, det som minumum skal ændres er:
+´´´
+sosi.test.federation=false
+sosi.sts.url=korrekt url
+sosi.careprovider.name=Skal stemme med dem i certifikatet
+sosi.careprovider.cvr=Skal stemme med dem i certifikatet
+´´´
+
+
 Eksempler
 =========
 I src/test/resources findes der konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
@@ -55,4 +72,41 @@ For at hente metadata fra Bemyndigelse:
 For at indlæse metadata til Bemyndigelse:
    ```-Dxmlfile=indlaesmetadata.xml -Dconfig=indlaesmetadata.properties```
 
+Properties
+==========
+Man kan overskrive følgene parametre i sin properties fil.
+´´´
+# Endpoint
+serviceurl=https://udv1.vaccinationsregister.dk/ws/vaccinationsService
+soapaction=http://vaccinationsregister.dk/schemas/2010/07/01#GetVaccinationCard
+
+# Keystore and vault config
+# Can point to a file using file:/// syntax
+keystore.path=classpath:validMocesVault.jks
+keystore.password=Test1234
+keystore.alias=sosi:alias_system
+
+# Test federation must be false if used in production environtment
+sosi.test.federation=true
+sosi.sts.url=http://pan.certifikat.dk/sts/services/SecurityTokenService
+# Careprovider must match the certificate
+sosi.careprovider.name=TRIFORK SERVICES A/S
+sosi.careprovider.cvr=25520041
+
+# moces = medarbejder certificat
+# voces = virksomheds certificat
+sosi.certificate.type=moces
+sosi.system.name=SOSITEST
+
+# Whitelisting header values
+whitelisting.header=true
+sdsd.system.owner.name=Trifork
+sdsd.system.name=DGWS Client
+sdsd.system.version=1.0
+sdsd.org.responsible.name=Trifork
+sdsd.org.using.name=Trifork
+sdsd.org.using.id.name.format=medcom:cvrnumber
+sdsd.org.using.id.value=25520041
+sdsd.requested.role=L\u00E6ge
+´´´
 
