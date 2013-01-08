@@ -21,11 +21,9 @@ import dk.sosi.seal.model.SecurityTokenRequest;
 import dk.sosi.seal.model.SignatureUtil;
 import dk.sosi.seal.model.UserInfo;
 import dk.sosi.seal.model.constants.SubjectIdentifierTypeValues;
-import dk.sosi.seal.vault.CredentialVault;
 import dk.sosi.seal.vault.GenericCredentialVault;
 import dk.sosi.seal.xml.XmlUtil;
 import com.trifork.dgws.testclient.Helper.ServiceException;
-import org.w3c.dom.Document;
 
 public class SOSI {
 

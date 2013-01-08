@@ -1,8 +1,5 @@
 package com.trifork.dgws.testclient;
 
-import java.security.PrivateKey;
-import java.security.cert.X509Certificate;
-
 /**
  *
  */
