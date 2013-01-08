@@ -1,4 +1,4 @@
-package com.trifork.dgws.testclient;
+package com.trifork.dgws.client;
 
 import dk.sosi.seal.vault.ArchivableCredentialVault;
 import dk.sosi.seal.vault.CredentialVaultException;

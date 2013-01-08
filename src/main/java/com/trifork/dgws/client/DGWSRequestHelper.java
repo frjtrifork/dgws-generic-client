@@ -1,4 +1,4 @@
-package com.trifork.dgws.testclient;
+package com.trifork.dgws.client;
 
 import dk.sosi.seal.model.IDCard;
 import dk.sosi.seal.model.Request;

@@ -1,4 +1,4 @@
-package com.trifork.dgws.testclient;
+package com.trifork.dgws.client;
 
 import java.io.IOException;
 import java.security.*;
@@ -23,7 +23,7 @@ import dk.sosi.seal.model.UserInfo;
 import dk.sosi.seal.model.constants.SubjectIdentifierTypeValues;
 import dk.sosi.seal.vault.GenericCredentialVault;
 import dk.sosi.seal.xml.XmlUtil;
-import com.trifork.dgws.testclient.Helper.ServiceException;
+import com.trifork.dgws.client.Helper.ServiceException;
 
 public class SOSI {
 

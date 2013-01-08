@@ -9,6 +9,11 @@
     <artifactId>dgws-generic-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <spring.core.version>3.1.1.RELEASE</spring.core.version>
+    </properties>
+
+
     <repositories>
         <repository>
             <id>trifork.nexus</id>
@@ -47,17 +52,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>3.1.1.RELEASE</version>
+            <version>${spring.core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
-            <version>3.1.1.RELEASE</version>
+            <version>${spring.core.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>3.1.1.RELEASE</version>
+            <version>${spring.core.version}</version>
         </dependency>
     </dependencies>
 
@@ -79,7 +84,7 @@
                 <version>1.2.1</version>
                 <configuration>
                     <includeProjectDependencies>true</includeProjectDependencies>
-                    <mainClass>com.trifork.dgws.testclient.WSClient</mainClass>
+                    <mainClass>com.trifork.dgws.client.WSClient</mainClass>
                     <systemProperties>
                         <systemProperty>
                             <key>config</key>
@@ -100,7 +105,7 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <mainClass>com.trifork.dgws.testclient.WSClient</mainClass>
+                            <mainClass>com.trifork.dgws.client.WSClient</mainClass>
                             <attachToBuild>true</attachToBuild>
                         </configuration>
                         <goals>

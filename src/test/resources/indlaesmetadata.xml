@@ -153,15 +153,5 @@
             <Beskrivelse>Se og søge i auditlog</Beskrivelse>
         </Rettighed>
     </Rettigheder>
-<!--
-    <DelegerbarRettigheder>
 
-        <DelegerbarRettighed>
-            <Domaene>Trifork</Domaene>
-            <System>DDV</System>
-            <Arbejdsfunktion>Doctor</Arbejdsfunktion>
-            <Rettighed>VaccinationGodkend</Rettighed>
-        </DelegerbarRettighed>
-    </DelegerbarRettigheder>
--->
 </ns:IndlaesMetadataRequest>
