@@ -38,13 +38,12 @@ Alternativt kan man køre toolet inde fra sin IDE:
 ###I produktion
 
 Løb igennem alle parametre og se de står korrekt til produktion, det som minumum skal ændres er:
-´´´
+```
 sosi.test.federation=false
 sosi.sts.url=korrekt url
 sosi.careprovider.name=Skal stemme med dem i certifikatet
 sosi.careprovider.cvr=Skal stemme med dem i certifikatet
-´´´
-
+```
 
 ##Eksempler
 
@@ -67,36 +66,37 @@ For at indlæse metadata til Bemyndigelse:
 ##Properties
 
 Man kan overskrive følgene parametre i sin properties fil.
+```
+# Endpoint
+serviceurl=https://udv1.vaccinationsregister.dk/ws/vaccinationsService
+soapaction=http://vaccinationsregister.dk/schemas/2010/07/01#GetVaccinationCard
 
-># Endpoint
->serviceurl=https://udv1.vaccinationsregister.dk/ws/vaccinationsService
->soapaction=http://vaccinationsregister.dk/schemas/2010/07/01#GetVaccinationCard
->
-># Keystore and vault config
-># Can point to a file using file:/// syntax
->keystore.path=classpath:validMocesVault.jks
->keystore.password=Test1234
->keystore.alias=sosi:alias_system
->
-># Test federation must be false if used in production environtment
->sosi.test.federation=true
->sosi.sts.url=http://pan.certifikat.dk/sts/services/SecurityTokenService
-># Careprovider must match the certificate
->sosi.careprovider.name=TRIFORK SERVICES A/S
->sosi.careprovider.cvr=25520041
->
-># moces = medarbejder certificat
-># voces = virksomheds certificat
->sosi.certificate.type=moces
->sosi.system.name=SOSITEST
->
-># Whitelisting header values
->whitelisting.header=true
->sdsd.system.owner.name=Trifork
->sdsd.system.name=DGWS Client
->sdsd.system.version=1.0
->sdsd.org.responsible.name=Trifork
->sdsd.org.using.name=Trifork
->sdsd.org.using.id.name.format=medcom:cvrnumber
->sdsd.org.using.id.value=25520041
->sdsd.requested.role=L\u00E6ge
+# Keystore and vault config
+# Can point to a file using file:/// syntax
+keystore.path=classpath:validMocesVault.jks
+keystore.password=Test1234
+keystore.alias=sosi:alias_system
+
+# Test federation must be false if used in production environtment
+sosi.test.federation=true
+sosi.sts.url=http://pan.certifikat.dk/sts/services/SecurityTokenService
+# Careprovider must match the certificate
+sosi.careprovider.name=TRIFORK SERVICES A/S
+sosi.careprovider.cvr=25520041
+
+# moces = medarbejder certificat
+# voces = virksomheds certificat
+sosi.certificate.type=moces
+sosi.system.name=SOSITEST
+
+# Whitelisting header values
+whitelisting.header=true
+sdsd.system.owner.name=Trifork
+sdsd.system.name=DGWS Client
+sdsd.system.version=1.0
+sdsd.org.responsible.name=Trifork
+sdsd.org.using.name=Trifork
+sdsd.org.using.id.name.format=medcom:cvrnumber
+sdsd.org.using.id.value=25520041
+sdsd.requested.role=L\u00E6ge
+```
