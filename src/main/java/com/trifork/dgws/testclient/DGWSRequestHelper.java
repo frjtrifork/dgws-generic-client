@@ -25,8 +25,6 @@ public class DGWSRequestHelper {
 
     private static final Logger logger = Logger.getLogger(DGWSRequestHelper.class);
 
-    public static final String PROPERTY_SOAPACTION = "soapaction";
-
     private String serviceEndpoint;
 
     private boolean whitelistingHeaderEnabled = false;
@@ -169,30 +167,5 @@ public class DGWSRequestHelper {
         }
         return response;
     }
-
-    /**
-     * Whitelisting header is optional - the content is controlled by the whitelisting.header property defined in config.properties
-     * @return empty string if whitelisting.header=false, else a valid whitelisting header will be returned
-     */
-    /*private Element getWhitelistingHeaderEnabled() {
-        Document whiteListDoc = XmlUtil.createEmptyDocument();
-        whiteListDoc.getDocumentElement();
-        Element whitelistElem = whiteListDoc.createElement("WhiteListingHeader");
-        if (systemOwnerName != null) {
-            whitelistElem.insertBefore()
-        }
-        String header = "";
-        if (whitelistingHeaderEnabled) {
-            header = "       <ns1:WhiteListingHeader>\n" +
-                    "         <ns:SystemOwnerName>" + systemOwnerName + "</ns:SystemOwnerName>\n" +
-                    "         <ns:SystemName>" + systemName + "</ns:SystemName>\n" +
-                    "         <ns:SystemVersion>" + systemVersion + "</ns:SystemVersion>\n" +
-                    "         <ns:OrgResponsibleName>" + orgResponsibleName + "</ns:OrgResponsibleName>\n" +
-                    "         <ns:OrgUsingID NameFormat=\"" + orgUsingIdNameFormat + "\">" + orgUsingIdValue + "</ns:OrgUsingID>\n" +
-                    "         <ns:RequestedRole>" + requestedRole + "</ns:RequestedRole>\n" +
-                    "      </ns1:WhiteListingHeader>\n";
-        }
-        return whiteListDoc.getDocumentElement();
-    } */
 
 }

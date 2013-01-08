@@ -1,12 +1,11 @@
-dgws-testclient
-===============
+#dgws-generic-client
 
-Simpel DGWS testklient der kan wrappe en XML payload i en korrekt DGWS Soap Envelope og skyde kaldet afsted mod en DGWS.
+Simpel DGWS klient der kan wrappe en XML payload i en korrekt DGWS Soap Envelope og skyde kaldet afsted mod en DGWS.
 
 Der er lavet en WSClient klasse med en main som er rimelig nem at gå til.
 
-Konfiguration
-=============
+##Konfiguration
+
 WSClient indlæser konfiguration fra flere kilder:
  - Benyt -Dpropertynavn=value for at overskrive værdier indlæst fra properties filerne
  - Opret en properties fil og skriv de nøgler du vil overskrive deri, og udpeg filen med -Dconfig=minconfig.properties
@@ -14,8 +13,7 @@ WSClient indlæser konfiguration fra flere kilder:
  - Default konfigurationen findes i src/main/resources/config.properties. Undlad at rette i den fil!, benyt en af de ovenstående muligheder i stedet.
  - For at udpege XML payloaden kan man angive -Dxmlfile=payload.xml
 
-Kørsel
-======
+##Kørsel
 Klienten kan køres fra kommandolinjen vha Maven:
 
     mvn exec:java -Dconfig=src/test/resources/getVaccinationCard.properties -Dxmlfile=src/test/resources/getVaccinationCardRequest.xml
@@ -37,8 +35,18 @@ Alternativt kan man køre toolet inde fra sin IDE:
 
 - Højreklik på WSClient og vælg run - lav evt. flere konfigurationer til de forskellige sæt af -Dconfig -Dxmlfile systemproperties.
 
-Eksempler
-=========
+###I produktion
+
+Løb igennem alle parametre og se de står korrekt til produktion, det som minumum skal ændres er:
+```
+sosi.test.federation=false
+sosi.sts.url=korrekt url
+sosi.careprovider.name=Skal stemme med dem i certifikatet
+sosi.careprovider.cvr=Skal stemme med dem i certifikatet
+```
+
+##Eksempler
+
 I src/test/resources findes der konfigurationer der kan kalde DDV getVaccinationCard, Bemyndigelse hentMetadata og Bemyndigelse indlæsMetadata.
 
 For at ændre de endpoints/soapactions der benyttes skal man rette i properties filen.
@@ -55,4 +63,40 @@ For at hente metadata fra Bemyndigelse:
 For at indlæse metadata til Bemyndigelse:
    ```-Dxmlfile=indlaesmetadata.xml -Dconfig=indlaesmetadata.properties```
 
+##Properties
 
+Man kan overskrive følgene parametre i sin properties fil.
+```
+# Endpoint
+serviceurl=https://udv1.vaccinationsregister.dk/ws/vaccinationsService
+soapaction=http://vaccinationsregister.dk/schemas/2010/07/01#GetVaccinationCard
+
+# Keystore and vault config
+# Can point to a file using file:/// syntax
+keystore.path=classpath:validMocesVault.jks
+keystore.password=Test1234
+keystore.alias=sosi:alias_system
+
+# Test federation must be false if used in production environtment
+sosi.test.federation=true
+sosi.sts.url=http://pan.certifikat.dk/sts/services/SecurityTokenService
+# Careprovider must match the certificate
+sosi.careprovider.name=TRIFORK SERVICES A/S
+sosi.careprovider.cvr=25520041
+
+# moces = medarbejder certificat
+# voces = virksomheds certificat
+sosi.certificate.type=moces
+sosi.system.name=SOSITEST
+
+# Whitelisting header values
+whitelisting.header=true
+sdsd.system.owner.name=Trifork
+sdsd.system.name=DGWS Client
+sdsd.system.version=1.0
+sdsd.org.responsible.name=Trifork
+sdsd.org.using.name=Trifork
+sdsd.org.using.id.name.format=medcom:cvrnumber
+sdsd.org.using.id.value=25520041
+sdsd.requested.role=L\u00E6ge
+```
